@@ -1,0 +1,8 @@
+.movie-item{
+    display: inline-block;
+    width: 10%;
+}
+
+.movie-item img{
+    width: 100%;
+}
