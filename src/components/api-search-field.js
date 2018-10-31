@@ -19,8 +19,20 @@ export default class ApiSearchField extends Component {
     
     this.resetTimer();
     const value = event.target.value;
+
+    this.setState({
+      loading: true
+    });
     
-    if(!value) return false;
+    if(!value){
+      
+      this.setState({
+        loading: false
+      });
+
+      return false;
+
+    } 
 
     this.timeoutTimer = setTimeout(() => {
       this.props.search(value);
@@ -37,7 +49,9 @@ export default class ApiSearchField extends Component {
 
   render(){
     return(
-      <input type="text" onChange={this.handleChange} />
+      <div className="search-wrapper">
+        <input type="text" onChange={this.handleChange} />
+      </div>
     )
   }
 
