@@ -3,12 +3,14 @@ import '../styles/styles.css';
 
 const MovieList = (props) => {
   return (
-    <ul>
+    <ul className="movie-list">
       {
         props.movies.map( (m, index) => {
           return(
-            <li className='movie-item' key={m.imdbID+index}>
-              <img src={m.Poster}></img>
+            <li 
+              className='movie-item' 
+              key={m.imdbID+index}
+              style={{backgroundImage: 'url('+m.Poster+')'}}>
             </li>
           )
         })
